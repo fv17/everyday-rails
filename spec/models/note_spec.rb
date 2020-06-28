@@ -28,9 +28,9 @@ RSpec.describe Note, type: :model do
   end
 
   describe "search message for a term" do # #searchとメソッド名を書く人もいるけど筆者はコードの"振る舞い"を書く派とのこと
-    let(:note1) { create(:note, project: project, user: user, message: "First Note") }
-    let(:note2) { create(:note, project: project, user: user, message: "Second Note") }
-    let(:note3) { create(:note, project: project, user: user, message: "First, perheat the oven.") }
+    let!(:note1) { create(:note, project: project, user: user, message: "First Note") }
+    let!(:note2) { create(:note, project: project, user: user, message: "Second Note") }
+    let!(:note3) { create(:note, project: project, user: user, message: "First, perheat the oven.") }
 
     context "when a match is found" do
       it "returns notes that match the search term" do
